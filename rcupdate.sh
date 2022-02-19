@@ -35,7 +35,6 @@ fi
 }
 function icurl() {
 sudo apt install curl -yqq 1>/dev/null 2>&1
-fi
 }
 function rcloneupdate() {
       tee <<-EOF

@@ -21,7 +21,7 @@ EOF
 }
 
 function updateall() {
-package_list="update upgrade dist-upgrade autoremove autoclean curl "
+package_list="update upgrade dist-upgrade autoremove autoclean "
 for i in ${package_list}; do
     sudo apt $i -yqq 1>/dev/null 2>&1
     echo "$i is running , please wait"
@@ -31,6 +31,10 @@ done
 function killmergerfs() {
 if [[ $(command -v mergerfs) != "" ]]; then
    sudo apt-get purge mergerfs -yqq 1>/dev/null 2>&1
+fi
+}
+function icurl() {
+sudo apt install curl -yqq 1>/dev/null 2>&1
 fi
 }
 function rcloneupdate() {
@@ -65,6 +69,7 @@ function update() {
 sudocheck
 killmergerfs
 updateall
+icurl
 rcloneupdate
 }
 

@@ -21,7 +21,7 @@ EOF
 }
 
 function updateall() {
-package_list="update upgrade dist-upgrade autoremove autoclean "
+package_list="update upgrade dist-upgrade autoremove autoclean curl "
 for i in ${package_list}; do
     sudo apt $i -yqq 1>/dev/null 2>&1
     echo "$i is running , please wait"
